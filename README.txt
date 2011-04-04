@@ -5,3 +5,4 @@ The fork provides the following enhancements
 - Converted the plugin to a Smart Content Source to allow easy editing
 
 The original project can be found at http://insertcode.codeplex.com/ and is licensed under MS-PL.
+Also includes work from Jean-Claude Manoli (http://www.manoli.net/csharpformat/)
