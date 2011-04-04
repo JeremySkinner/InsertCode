@@ -141,6 +141,7 @@ namespace InsertCodePlugin
 			this.buttonOK = new System.Windows.Forms.Button();
 			this.buttonCancel = new System.Windows.Forms.Button();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.webBrowser1 = new System.Windows.Forms.WebBrowser();
 			this.label1 = new System.Windows.Forms.Label();
@@ -149,7 +150,6 @@ namespace InsertCodePlugin
 			this.checkBoxAlternateLineBackground = new System.Windows.Forms.CheckBox();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.checkBoxEmbedStyle = new System.Windows.Forms.CheckBox();
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
@@ -195,6 +195,16 @@ namespace InsertCodePlugin
 			this.splitContainer1.SplitterDistance = 161;
 			this.splitContainer1.TabIndex = 0;
 			this.splitContainer1.TabStop = false;
+			// 
+			// richTextBox1
+			// 
+			this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.richTextBox1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.richTextBox1.Location = new System.Drawing.Point(0, 13);
+			this.richTextBox1.Name = "richTextBox1";
+			this.richTextBox1.Size = new System.Drawing.Size(556, 148);
+			this.richTextBox1.TabIndex = 0;
+			this.richTextBox1.Text = "";
 			// 
 			// label2
 			// 
@@ -267,22 +277,14 @@ namespace InsertCodePlugin
 			// 
 			this.checkBoxEmbedStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.checkBoxEmbedStyle.AutoSize = true;
+			this.checkBoxEmbedStyle.Checked = true;
+			this.checkBoxEmbedStyle.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.checkBoxEmbedStyle.Location = new System.Drawing.Point(13, 581);
 			this.checkBoxEmbedStyle.Name = "checkBoxEmbedStyle";
 			this.checkBoxEmbedStyle.Size = new System.Drawing.Size(113, 17);
 			this.checkBoxEmbedStyle.TabIndex = 2;
 			this.checkBoxEmbedStyle.Text = "Embed StyleSheet";
 			this.checkBoxEmbedStyle.UseVisualStyleBackColor = true;
-			// 
-			// richTextBox1
-			// 
-			this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.richTextBox1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.richTextBox1.Location = new System.Drawing.Point(0, 13);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(556, 148);
-			this.richTextBox1.TabIndex = 0;
-			this.richTextBox1.Text = "";
 			// 
 			// InsertCodeInsertForm
 			// 
