@@ -32,8 +32,8 @@ namespace InsertCodePlugin
 	{
 		public string RawCode
 		{
-			get { return textBox1.Text; }
-			set { textBox1.Text = value; }
+			get { return richTextBox1.Text; }
+			set { richTextBox1.Text = value; }
 		}
 
 		public SourceFormat Format
@@ -70,10 +70,10 @@ namespace InsertCodePlugin
 		private CheckBox checkBoxLineNumbers;
 		private CheckBox checkBoxAlternateLineBackground;
 		private Timer timer1;
-		private TextBox textBox1;
 		private Label label2;
 		private Label label1;
 		private CheckBox checkBoxEmbedStyle;
+		private RichTextBox richTextBox1;
 		private IContainer components;
 
 		public InsertCodeInsertForm()
@@ -87,6 +87,7 @@ namespace InsertCodePlugin
 
 			Load += delegate {
 				this.timer1.Start();
+				richTextBox1.Focus();
 				if (comboBoxLanguage.SelectedItem == null) comboBoxLanguage.SelectedIndex = 0;
 			};
 
@@ -140,7 +141,6 @@ namespace InsertCodePlugin
 			this.buttonOK = new System.Windows.Forms.Button();
 			this.buttonCancel = new System.Windows.Forms.Button();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.webBrowser1 = new System.Windows.Forms.WebBrowser();
 			this.label1 = new System.Windows.Forms.Label();
@@ -149,6 +149,7 @@ namespace InsertCodePlugin
 			this.checkBoxAlternateLineBackground = new System.Windows.Forms.CheckBox();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.checkBoxEmbedStyle = new System.Windows.Forms.CheckBox();
+			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
@@ -160,7 +161,7 @@ namespace InsertCodePlugin
 			this.buttonOK.Location = new System.Drawing.Point(433, 577);
 			this.buttonOK.Name = "buttonOK";
 			this.buttonOK.Size = new System.Drawing.Size(64, 23);
-			this.buttonOK.TabIndex = 4;
+			this.buttonOK.TabIndex = 5;
 			this.buttonOK.Text = "OK";
 			// 
 			// buttonCancel
@@ -169,7 +170,7 @@ namespace InsertCodePlugin
 			this.buttonCancel.Location = new System.Drawing.Point(505, 577);
 			this.buttonCancel.Name = "buttonCancel";
 			this.buttonCancel.Size = new System.Drawing.Size(64, 23);
-			this.buttonCancel.TabIndex = 5;
+			this.buttonCancel.TabIndex = 6;
 			this.buttonCancel.Text = "Cancel";
 			// 
 			// splitContainer1
@@ -183,7 +184,7 @@ namespace InsertCodePlugin
 			// 
 			// splitContainer1.Panel1
 			// 
-			this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+			this.splitContainer1.Panel1.Controls.Add(this.richTextBox1);
 			this.splitContainer1.Panel1.Controls.Add(this.label2);
 			// 
 			// splitContainer1.Panel2
@@ -194,16 +195,6 @@ namespace InsertCodePlugin
 			this.splitContainer1.SplitterDistance = 161;
 			this.splitContainer1.TabIndex = 0;
 			this.splitContainer1.TabStop = false;
-			// 
-			// textBox1
-			// 
-			this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.textBox1.Location = new System.Drawing.Point(0, 13);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textBox1.Size = new System.Drawing.Size(556, 148);
-			this.textBox1.TabIndex = 0;
 			// 
 			// label2
 			// 
@@ -222,7 +213,7 @@ namespace InsertCodePlugin
 			this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
 			this.webBrowser1.Name = "webBrowser1";
 			this.webBrowser1.Size = new System.Drawing.Size(556, 361);
-			this.webBrowser1.TabIndex = 0;
+			this.webBrowser1.TabIndex = 1;
 			this.webBrowser1.TabStop = false;
 			// 
 			// label1
@@ -244,7 +235,7 @@ namespace InsertCodePlugin
 			this.comboBoxLanguage.Location = new System.Drawing.Point(16, 6);
 			this.comboBoxLanguage.Name = "comboBoxLanguage";
 			this.comboBoxLanguage.Size = new System.Drawing.Size(169, 21);
-			this.comboBoxLanguage.TabIndex = 1;
+			this.comboBoxLanguage.TabIndex = 7;
 			// 
 			// checkBoxLineNumbers
 			// 
@@ -253,7 +244,7 @@ namespace InsertCodePlugin
 			this.checkBoxLineNumbers.Location = new System.Drawing.Point(132, 581);
 			this.checkBoxLineNumbers.Name = "checkBoxLineNumbers";
 			this.checkBoxLineNumbers.Size = new System.Drawing.Size(86, 17);
-			this.checkBoxLineNumbers.TabIndex = 2;
+			this.checkBoxLineNumbers.TabIndex = 3;
 			this.checkBoxLineNumbers.Text = "line numbers";
 			this.checkBoxLineNumbers.UseVisualStyleBackColor = true;
 			// 
@@ -264,7 +255,7 @@ namespace InsertCodePlugin
 			this.checkBoxAlternateLineBackground.Location = new System.Drawing.Point(224, 581);
 			this.checkBoxAlternateLineBackground.Name = "checkBoxAlternateLineBackground";
 			this.checkBoxAlternateLineBackground.Size = new System.Drawing.Size(148, 17);
-			this.checkBoxAlternateLineBackground.TabIndex = 3;
+			this.checkBoxAlternateLineBackground.TabIndex = 4;
 			this.checkBoxAlternateLineBackground.Text = "alternate line background";
 			this.checkBoxAlternateLineBackground.UseVisualStyleBackColor = true;
 			// 
@@ -279,9 +270,19 @@ namespace InsertCodePlugin
 			this.checkBoxEmbedStyle.Location = new System.Drawing.Point(13, 581);
 			this.checkBoxEmbedStyle.Name = "checkBoxEmbedStyle";
 			this.checkBoxEmbedStyle.Size = new System.Drawing.Size(113, 17);
-			this.checkBoxEmbedStyle.TabIndex = 6;
+			this.checkBoxEmbedStyle.TabIndex = 2;
 			this.checkBoxEmbedStyle.Text = "Embed StyleSheet";
 			this.checkBoxEmbedStyle.UseVisualStyleBackColor = true;
+			// 
+			// richTextBox1
+			// 
+			this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.richTextBox1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.richTextBox1.Location = new System.Drawing.Point(0, 13);
+			this.richTextBox1.Name = "richTextBox1";
+			this.richTextBox1.Size = new System.Drawing.Size(556, 148);
+			this.richTextBox1.TabIndex = 0;
+			this.richTextBox1.Text = "";
 			// 
 			// InsertCodeInsertForm
 			// 
